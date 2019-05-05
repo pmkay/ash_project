@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProbeuseTable extends Migration
+class CreateProbeusesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateProbeuseTable extends Migration
      */
     public function up()
     {
-        Schema::table('probeuses', function (Blueprint $table) {
+        Schema::create('probeuses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->float('speed');
             $table->float('contact_time');
+            $table->timestamps();
         });
     }
 

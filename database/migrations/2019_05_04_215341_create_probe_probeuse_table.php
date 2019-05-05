@@ -13,7 +13,7 @@ class CreateProbeProbeuseTable extends Migration
      */
     public function up()
     {
-        Schema::table('probe_probuse', function (Blueprint $table) {
+        Schema::create('probe_probuse', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('probe_id');
             $table->unsignedInteger('probeuse_id');

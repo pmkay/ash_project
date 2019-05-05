@@ -20,7 +20,6 @@ class CreateMeasurementsTable extends Migration
             $table->bigInteger('force')->nullable();
             $table->unsignedInteger('probe_id');
             $table->unsignedInteger('filter_id');
-            $table->unsignedInteger('user_id');
             $table->timestamps();
         });
     }

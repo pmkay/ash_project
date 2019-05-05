@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFilterTable extends Migration
+class CreateFiltersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateFilterTable extends Migration
      */
     public function up()
     {
-        Schema::table('filters', function (Blueprint $table) {
+        Schema::create('filters', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('type');
             $table->string('application');
             $table->unsignedInteger('provider_id');
+            $table->timestamps();
         });
     }
 

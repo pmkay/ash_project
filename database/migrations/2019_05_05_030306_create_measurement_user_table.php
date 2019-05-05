@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProbesTable extends Migration
+class CreateMeasurementUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateProbesTable extends Migration
      */
     public function up()
     {
-        Schema::create('probes', function (Blueprint $table) {
+        Schema::create('measurement_user', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('type');
-            $table->float('radius');
-            $table->float('spring_constant');
-            $table->timestamps();
+            $table->unsignedInteger('measurement_id');
+            $table->unsignedInteger('user_id');
         });
     }
 
@@ -29,7 +27,7 @@ class CreateProbesTable extends Migration
      */
     public function down()
     {
-        Schema::table('probe', function (Blueprint $table) {
+        Schema::table('measurement_user', function (Blueprint $table) {
             //
         });
     }

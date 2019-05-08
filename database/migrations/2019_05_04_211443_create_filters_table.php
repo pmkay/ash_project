@@ -17,7 +17,7 @@ class CreateFiltersTable extends Migration
             $table->bigIncrements('id');
             $table->string('type');
             $table->string('application');
-            $table->unsignedInteger('provider_id');
+            $table->integer('measurement_id');
             $table->timestamps();
         });
     }

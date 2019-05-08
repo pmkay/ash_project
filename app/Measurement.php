@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Measurement extends Model
 {
+    protected $casts = [
+        'date' => 'date'
+    ];
     public function probe()
     {
         return $this->hasMany(Probe::class);

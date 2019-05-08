@@ -18,6 +18,7 @@ class CreateProbesTable extends Migration
             $table->string('type');
             $table->float('radius');
             $table->float('spring_constant');
+            $table->integer('measurement_id');
             $table->timestamps();
         });
     }

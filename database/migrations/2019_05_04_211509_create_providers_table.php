@@ -17,6 +17,7 @@ class CreateProvidersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('address');
+            $table->Integer('filter_id');
             $table->timestamps();
         });
     }

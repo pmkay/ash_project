@@ -18,8 +18,8 @@ class CreateMeasurementsTable extends Migration
             $table->date('date');
             $table->bigInteger('deflection')->nullable();
             $table->bigInteger('force')->nullable();
-            $table->unsignedInteger('probe_id');
-            $table->unsignedInteger('filter_id');
+            // $table->unsignedInteger('probe_id');
+            // $table->unsignedInteger('filter_id');
             $table->timestamps();
         });
     }

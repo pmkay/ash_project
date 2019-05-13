@@ -9,6 +9,6 @@ class Probeuse extends Model
 {
     public function probe()
     {
-        return $this->belongsToMany(Probe::class);
+        return $this->belongsTo(Probe::class);
     }
 }

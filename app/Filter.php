@@ -10,11 +10,11 @@ class Filter extends Model
 {
     public function provider()
     {
-        return $this->hasMany(Provider::class);
+        return $this->belongsTo(Provider::class);
     }
 
     public function measurement()
     {
-        return $this->belongsTo(Measurement::class);
+        return $this->hasMany(Measurement::class);
     }
 }

@@ -14,16 +14,16 @@ class Measurement extends Model
     ];
     public function probe()
     {
-        return $this->hasMany(Probe::class);
+        return $this->belongsTo(Probe::class);
     }
 
     public function filter()
     {
-        return $this->hasMany(Filter::class);
+        return $this->belongsTo(Filter::class);
     }
 
     public function user()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
 }

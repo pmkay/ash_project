@@ -9,6 +9,6 @@ class Provider extends Model
 {
     public function filter()
     {
-        return $this->belongsTo(Filter::class);
+        return $this->hasMany(Filter::class);
     }
 }

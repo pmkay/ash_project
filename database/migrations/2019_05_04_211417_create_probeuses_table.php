@@ -15,8 +15,8 @@ class CreateProbeusesTable extends Migration
     {
         Schema::create('probeuses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->float('speed');
-            $table->float('contact_time');
+            $table->double('speed');
+            $table->double('contact_time');
             $table->timestamps();
         });
     }

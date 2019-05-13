@@ -40,6 +40,6 @@ class User extends Authenticatable
 
     public function measurement()
     {
-        return $this->belongsToMany(Measurement::class);
+        return $this->hasMany(Measurement::class);
     }
 }

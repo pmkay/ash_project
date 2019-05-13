@@ -16,9 +16,9 @@ class CreateProbesTable extends Migration
         Schema::create('probes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('type');
-            $table->float('radius');
-            $table->float('spring_constant');
-            $table->integer('measurement_id');
+            $table->double('radius');
+            $table->double('spring_constant');
+            $table->integer('probeuse_id');
             $table->timestamps();
         });
     }

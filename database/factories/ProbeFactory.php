@@ -8,8 +8,10 @@ use Faker\Generator as Faker;
 $factory->define(Probe::class, function (Faker $faker) {
     return [
         'type' => 'test',
-        'radius' => $faker->randomFloat($nbMaxDecimals = 5, $min = 0, $max = 100),
-        'spring_constant' => $faker->randomFloat($nbMaxDecimals = 5, $min = 0, $max = 100),
-        
+        'radius' => $faker->randomDigit,
+        'spring_constant' => $faker->randomDigit,
+        'probeuse_id' => function () {
+            return factory(App\Probeuse::class)->create()->id;
+        }
     ];
 });

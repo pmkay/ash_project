@@ -8,6 +8,9 @@ use Faker\Generator as Faker;
 $factory->define(Provider::class, function (Faker $faker) {
     return [
         'name' => $faker->firstName,
-        'address' => $faker->streetAddress
+        'address' => $faker->streetAddress,
+        // 'filter_id' => function () {
+        //     return factory(App\Filter::class)->create()->id;
+        // }
     ];
 });

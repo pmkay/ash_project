@@ -4,6 +4,8 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -43,6 +45,10 @@ class Probe extends Resource
         return [
             ID::make()->sortable(),
 
+            Text::make('type'),
+            Number::make('radius'),
+            Number::make('spring_constant'),
+             
 
             BelongsTo::make('Measurement'),
         ];

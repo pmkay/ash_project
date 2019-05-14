@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Illuminate\Database\Eloquent\Concerns\hasMany;
 
 class Probe extends Resource
 {
@@ -60,7 +60,7 @@ class Probe extends Resource
             Number::make('spring_constant'),
              
 
-            hasMany::make('Measurement'),
+            HasMany::make('Measurement'),
 
             BelongsTo::make('Probeuse'),
         ];

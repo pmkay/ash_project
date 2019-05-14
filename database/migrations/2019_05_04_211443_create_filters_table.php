@@ -15,6 +15,7 @@ class CreateFiltersTable extends Migration
     {
         Schema::create('filters', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('id_name');
             $table->string('type');
             $table->string('application');
             $table->integer('provider_id');

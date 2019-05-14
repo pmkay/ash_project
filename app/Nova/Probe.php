@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Illuminate\Database\Eloquent\Concerns\hasMany;
 
 class Probe extends Resource
 {
@@ -23,7 +24,7 @@ class Probe extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'id_name';
 
     /**
      * The columns that should be searched.
@@ -45,12 +46,18 @@ class Probe extends Resource
         return [
             ID::make()->sortable(),
 
+            Text::make('Identification ID', 'id_name'),
+
             Text::make('type'),
+
             Number::make('radius'),
+
             Number::make('spring_constant'),
              
 
-            BelongsTo::make('Measurement'),
+            hasMany::make('Measurement'),
+
+            BelongsTo::make('Probeuse'),
         ];
     }
 

@@ -5,8 +5,10 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Measurement extends Resource
@@ -23,7 +25,7 @@ class Measurement extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'id_name';
 
     /**
      * The columns that should be searched.
@@ -45,13 +47,19 @@ class Measurement extends Resource
         return [
             ID::make()->sortable(),
 
+            Text::make('Identification ID', 'id_name'),
+
             Date::make('date'),
+
             Number::make('deflection'),
+
             Number::make('force'),
 
-            HasMany::make('Filter'),
+            BelongsTo::make('Filter'),
 
-            HasMany::make('Probe'),
+            BelongsTo::make('Probe'),
+
+            BelongsTo::make('User'),
         ];
     }
 

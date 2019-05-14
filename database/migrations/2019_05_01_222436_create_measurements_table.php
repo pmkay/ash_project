@@ -15,9 +15,10 @@ class CreateMeasurementsTable extends Migration
     {
         Schema::create('measurements', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('id_name');
             $table->date('date');
-            $table->bigInteger('deflection')->nullable();
-            $table->bigInteger('force')->nullable();
+            $table->string('deflection')->nullable();
+            $table->string('force')->nullable();
             $table->Integer('probe_id');
             $table->Integer('filter_id');
             $table->Integer('user_id');

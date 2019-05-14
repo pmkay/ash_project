@@ -4,6 +4,8 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Probeuse extends Resource
@@ -20,7 +22,7 @@ class Probeuse extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'id_name';
 
     /**
      * The columns that should be searched.
@@ -41,6 +43,14 @@ class Probeuse extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Text::make('Identification ID', 'id_name'),
+
+            Number::make('speed'),
+
+            Number::make('contact_time'),
+
+            HasMany::make('Probe'),
         ];
     }
 

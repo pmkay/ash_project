@@ -23,7 +23,7 @@ class Filter extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'id_name';
 
     /**
      * The columns that should be searched.
@@ -45,13 +45,15 @@ class Filter extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('type'),
+            Text::make('Identification ID', 'id_name'),
 
-            Text::make('application'),
+            Text::make('Type'),
 
-            HasMany::make('Provider'),
+            Text::make('Application'),
 
-            BelongsTo::make('Measurement'),
+            BelongsTo::make('Provider'),
+
+            hasMany::make('Measurement'),
         ];
     }
 

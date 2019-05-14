@@ -81,7 +81,7 @@ class Relatable implements Rule
         if ($inverseRelation && $this->request->resourceId) {
             $modelBeingUpdated = $this->request->findModelOrFail();
 
-            if ($modelBeingUpdated->{$attribute}->getKey() == $value) {
+            if ($modelBeingUpdated->{$attribute} && $modelBeingUpdated->{$attribute}->getKey() == $value) {
                 return false;
             }
         }
@@ -100,7 +100,8 @@ class Relatable implements Rule
     protected function authorize($resource, $model)
     {
         return (new $resource($model))->authorizedToAdd(
-            $this->request, $this->request->model()
+            $this->request,
+            $this->request->model()
         );
     }
 

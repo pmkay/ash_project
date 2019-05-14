@@ -10,7 +10,7 @@ class Probe extends Model
 {
     public function probeuse()
     {
-        return $this->hasMany(Probeuse::class);
+        return $this->belongsTo(Probeuse::class);
     }
 
     public function measurement()

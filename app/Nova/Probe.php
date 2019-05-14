@@ -62,7 +62,7 @@ class Probe extends Resource
 
             HasMany::make('Measurement'),
 
-            HasMany::make('Probeuse'),
+            BelongsTo::make('Probeuse'),
         ];
     }
 

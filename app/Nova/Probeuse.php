@@ -52,7 +52,7 @@ class Probeuse extends Resource
 
             Number::make('contact_time'),
 
-            BelongsTo::make('Probe'),
+            HasMany::make('Probe'),
         ];
     }
 

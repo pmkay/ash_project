@@ -5,6 +5,7 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -47,7 +48,7 @@ class Provider extends Resource
             Text::make('name')->rules('required'),
 
             Text::make('address')->rules('required'),
-            BelongsTo::make('Filter'),
+            HasMany::make('Filter'),
 
         ];
     }

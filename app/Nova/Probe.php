@@ -49,15 +49,15 @@ class Probe extends Resource
 
             Text::make('Identification ID', 'id_name'),
 
-            Select::make('Size')->options([
+            Select::make('type')->options([
                 'PT.GS01' => 'PT.GS01',
                 'PT.GS02' => 'PT.GS02',
                 'PT.GS03' => 'PT.GS03',
             ]),
 
-            Number::make('radius'),
+            Text::make('tip_diameter'),
 
-            Number::make('spring_constant'),
+            Text::make('spring_constant'),
              
 
             HasMany::make('Measurement'),

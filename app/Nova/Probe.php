@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Illuminate\Database\Eloquent\Concerns\hasMany;
@@ -48,7 +49,11 @@ class Probe extends Resource
 
             Text::make('Identification ID', 'id_name'),
 
-            Text::make('type'),
+            Select::make('Size')->options([
+                'PT.GS01' => 'PT.GS01',
+                'PT.GS02' => 'PT.GS02',
+                'PT.GS03' => 'PT.GS03',
+            ]),
 
             Number::make('radius'),
 

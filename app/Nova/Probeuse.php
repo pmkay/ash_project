@@ -4,8 +4,10 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Probeuse extends Resource
@@ -50,7 +52,7 @@ class Probeuse extends Resource
 
             Number::make('contact_time'),
 
-            HasMany::make('Probe'),
+            BelongsTo::make('Probe'),
         ];
     }
 
